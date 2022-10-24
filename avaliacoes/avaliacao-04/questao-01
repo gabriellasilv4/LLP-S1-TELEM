@@ -1,0 +1,62 @@
+#include <stdio.h>
+
+//1) Dada uma Matriz Quadrada m que é passada para uma função soma_linha( m, slinha, n) onde slinha é um array e n é o tamanho da matriz quadrada. 
+//Calcular a soma dos elementos de cada linha da matriz m(i,j)  e armazenar a soma no array slinha (i).
+
+void f_soma (m1, m2, s1, n)
+int m1[] [3];
+int m2[] [3];
+int s1[] [3];
+int n;
+{
+int i;
+for (int i=0; i < n; i++) {
+for (int j = 0; j < n; j++) {
+s1[i][j] = m1[i][j] + m2[i][j];
+};
+}
+};
+void f_imprime_matriz (m, n)
+int m[] [3];
+int n;
+{
+printf("Matriz\n");
+for (int i=0; i < 3; i++) {
+for (int j = 0; j < 3; j++) {
+printf("Matriz[%d][%d]=%d ",i,j,m[i][j]);
+};
+printf("\n");
+}
+}
+int main() {
+int i, j;
+int M1 [3] [3] = { { 1 , 2 , 3 },
+{ 4, 8, 10},
+{ 5 , 6 , 7 }
+};
+int M2 [3] [3] = { { 4 , 1 , 1 },
+{ 6, 5, 2},
+{ 8 , 3 , 7 }
+};
+int S1 [3] [3] = { { 0 , 0 , 0 },
+{ 0, 0, 0},
+{ 0 , 0 , 0 }
+};
+printf("Matriz M1\n");
+for (int i=0; i < 3; i++) {
+for (int j = 0; j < 3; j++) {
+printf("M1[%d][%d]=%d ",i,j,M1[i][j]);
+};
+printf("\n");
+}
+printf("Matriz M2\n");
+for (int i=0; i < 3; i++) {
+for (int j = 0; j < 3; j++) {
+printf("M2[%d][%d]=%d ",i,j,M2[i][j]);
+};
+printf("\n");
+}
+f_soma(M1, M2, S1,3);
+f_imprime_matriz(S1,3);
+return 0;
+}
